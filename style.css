@@ -1,6 +1,75 @@
+:root {
+	--gray: oklch(80% 2% 200);
+	--white: #ffffff;
+	--color-acent: oklch(65% 50% 0);
+	--color-acent-transparent: oklch(65% 50% 0 / 50%);
+}
+
 body {
-	/* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
 	font: 100%/1.5 system-ui;
+	max-width: 100ch;
+	margin-inline: max(1em, (100% - 100ch) / 2);
+	padding: 1cm;
+}
+
+nav {
+	display: flex;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+
+nav a {
+	flex: 1;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	padding: 0.1em;
+}
+
+nav .current {
+	border-bottom-width: 0.4em; 
+	border-bottom-style: solid;
+	border-bottom-color: var(--gray);
+	padding: 0.1em;
+}
+
+nav a:hover {
+	background-color: var(--gray);
+	font-weight: bold;
+	margin: 0 auto;
+	
+	border-bottom-width: 0.4em; 
+	border-bottom-style: solid;
+	border-bottom-color: var(--color-acent);
+	padding: -0.1em;
+}
+
+/* input, textarea, buttom {
+	font: inherit;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+label, input, textarea, buttom {
+	display: block;
+}
+
+label {
+	margin-block: 1rem;
+} */
+
+form {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1em;
+}
+
+form label {
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+#button, label {
+	grid-column: 1 / -1;
 }
